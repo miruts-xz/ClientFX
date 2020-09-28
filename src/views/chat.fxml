@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="chatGridPage" maxWidth="400.0" prefHeight="45.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label fx:id="messageLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" ellipsisString=". . ." style="-fx-background-color: #0071a0; -fx-background-radius: 20 0 20 20; -fx-border-radius: 20 0 20 20;" text="Label" textFill="WHITE" GridPane.halignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>

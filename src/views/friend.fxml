@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="friendAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <FontAwesomeIcon fx:id="friendIcon" iconName="USER" layoutX="20.0" layoutY="49.0" size="50">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </FontAwesomeIcon>
+      <Label fx:id="friendNameLabel" layoutX="75.0" layoutY="9.0" prefHeight="50.0" prefWidth="119.0" text="Miruts">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <FontAwesomeIcon fx:id="friendRemoveButton" fill="RED" iconName="REMOVE" layoutX="224.0" layoutY="38.0" size="20" />
+   </children>
+</AnchorPane>

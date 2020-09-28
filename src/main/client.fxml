@@ -55,9 +55,9 @@
                         <Insets />
                      </StackPane.margin>
                   </Label>
-                  <ListView fx:id="chatList">
+                  <ListView fx:id="chatList" pickOnBounds="false">
                      <StackPane.margin>
-                        <Insets top="40.0" />
+                        <Insets bottom="50.0" top="40.0" />
                      </StackPane.margin>
                   </ListView>
                   <TextArea fx:id="newMessage" disable="true" maxHeight="50.0" maxWidth="340.0" prefHeight="50.0" prefWidth="331.0" promptText="Say something. . ." StackPane.alignment="BOTTOM_LEFT">
@@ -94,7 +94,7 @@
                         <Insets right="200.0" />
                      </StackPane.margin>
                   </Label>
-                  <TextField fx:id="portInput" maxWidth="50.0" text="5555" StackPane.alignment="CENTER_RIGHT">
+                  <TextField fx:id="portInput" maxWidth="50.0" text="6666" StackPane.alignment="CENTER_RIGHT">
                      <StackPane.margin>
                         <Insets left="14.0" right="145.0" />
                      </StackPane.margin>

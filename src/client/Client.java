@@ -13,7 +13,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.*;
 
-
+// Represents a request making client
 public class Client extends Thread {
     String host;
     int port;
@@ -63,7 +63,7 @@ public class Client extends Thread {
             while ((message = reader.readLine()) != null) {
 
                 List<String> messageArray = Arrays.asList(message.split(" "));
-                if (messageArray.get(0).equals("newuser")) {
+                if (messageArray.get(0).equals("newuser") && !friends.contains(messageArray.get(1))) {
                     friends.add(messageArray.get(1));
                     continue;
                 } else if (messageArray.get(0).equals("users")) {
