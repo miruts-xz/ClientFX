@@ -2,6 +2,9 @@ package client;
 
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.WritableBooleanValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
@@ -17,7 +20,7 @@ import java.util.*;
 public class Client extends Thread {
     String host;
     int port;
-    boolean isConnected = false;
+    public BooleanProperty isConnected;
     public BufferedReader reader;
     public PrintWriter writer;
     String username;
@@ -29,6 +32,7 @@ public class Client extends Thread {
         this.host = host;
         this.port = port;
         this.username = username;
+        this.isConnected = new SimpleBooleanProperty(false);
     }
 
     @Override
@@ -57,17 +61,23 @@ public class Client extends Thread {
             writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
             if (response.equals("Enter your name please")) {
                 writer.println(username);
-                this.isConnected = true;
+                this.isConnected.setValue(true);
             }
             String message;
             while ((message = reader.readLine()) != null) {
 
                 List<String> messageArray = Arrays.asList(message.split(" "));
                 if (messageArray.get(0).equals("newuser") && !friends.contains(messageArray.get(1))) {
-                    friends.add(messageArray.get(1));
+                    Platform.runLater(() -> {
+                        friends.add(messageArray.get(1));
+                        friends.remove(username);
+                    });
                     continue;
                 } else if (messageArray.get(0).equals("users")) {
-                    friends.addAll(messageArray.subList(1, messageArray.size()));
+                    Platform.runLater(() -> {
+                        friends.addAll(messageArray.subList(1, messageArray.size()));
+                        friends.remove(username);
+                    });
                     continue;
                 }
                 String from = messageArray.get(0);
@@ -84,7 +94,18 @@ public class Client extends Thread {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void disconnect() {
+        try {
+            this.writer.close();
+            this.reader.close();
+            this.friends.clear();
+            this.isConnected.setValue(false);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -7,9 +7,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="friendAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="friendAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <FontAwesomeIcon fx:id="friendIcon" iconName="USER" layoutX="20.0" layoutY="49.0" size="50">
+      <FontAwesomeIcon fx:id="friendIcon" iconName="USER" layoutX="21.0" layoutY="32.0" size="30">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -19,11 +19,11 @@
             </LinearGradient>
          </fill>
       </FontAwesomeIcon>
-      <Label fx:id="friendNameLabel" layoutX="75.0" layoutY="9.0" prefHeight="50.0" prefWidth="119.0" text="Miruts">
+      <Label fx:id="friendNameLabel" layoutX="65.0" layoutY="6.0" prefHeight="30.0" prefWidth="119.0" text="Miruts">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <FontAwesomeIcon fx:id="friendRemoveButton" fill="RED" iconName="REMOVE" layoutX="224.0" layoutY="38.0" size="20" />
+      <FontAwesomeIcon fx:id="friendRemoveButton" fill="RED" iconName="REMOVE" layoutX="195.0" layoutY="28.0" size="20" />
    </children>
 </AnchorPane>
